@@ -1,10 +1,8 @@
 package Primjeri;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-public class ListingPersons {
+public class ListingPersons2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,20 +12,14 @@ public class ListingPersons {
 		Person p3 = new Person("ali", 20);
 		Person p4 = new Person("adian", 10);
 		
-		List<Person> persons = new ArrayList<>();
-		persons.add(p1);
-		persons.add(p2);
-		persons.add(p3);
-		persons.add(p4);
-		
+		Person[] persons = {p1, p2, p3, p4};
 		System.out.println(persons.toString());
+		System.out.println(Arrays.toString(persons));
+		Person p5 = new Person("alina", 5);
 		
-		persons.add(new Person("alina", 5));
+		persons = addNew(persons, p5);
 		
-		System.out.println(persons.toString());
-		
-		for(Person p: persons)
-			System.out.println(p);
+		System.out.println(Arrays.toString(persons));
 	}
 
 	private static Person[] addNew(Person[] list, final Person p5) {
