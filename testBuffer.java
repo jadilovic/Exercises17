@@ -13,6 +13,8 @@ public class testBuffer {
 		System.out.println(broj % 4);
 		broj++;
 		System.out.println(broj % 4);
+		
+		System.out.println(testBuffer.class);
 	}
 
 }
