@@ -3,12 +3,9 @@ package Primjeri;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
-public class MapPersons {
+public class ageComparatorListingPersons {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -18,27 +15,25 @@ public class MapPersons {
 		Person p3 = new Person("ali", 20);
 		Person p4 = new Person("adian", 10);
 		
-		Map<String, Person> persons = new HashMap<>();
-		persons.put(p1.getName(), p1);
-		persons.put(p2.getName(), p2);
-		persons.put(p3.getName(), p3);
-		persons.put(p4.getName(), p4);
+		List<Person> persons = new ArrayList<>();
+		persons.add(p1);
+		persons.add(p2);
+		persons.add(p3);
+		persons.add(p4);
 		
 		System.out.println(persons.toString());
 		
-		persons.put("alina", new Person("alina", 5));
+		persons.add(new Person("alina", 5));
 		
 		System.out.println(persons.toString());
-		
-		//for(String p: persons.keySet())
-		//	System.out.println(p);
-		
-		for(Map.Entry<String, Person> p: persons.entrySet()){
-			System.out.print(p.getKey() + " ");
-			System.out.println(p.getValue());
-		}
 		
 		Collections.sort(persons, new AgeComparator());
+		
+		System.out.println(persons.toString());
+		
+		
+		for(Person p: persons)
+			System.out.println(p);
 	}
 
 	private static Person[] addNew(Person[] list, final Person p5) {
