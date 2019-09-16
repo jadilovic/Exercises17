@@ -11,9 +11,9 @@ public class ageComparatorListingPersons {
 		// TODO Auto-generated method stub
 
 		Person p1 = new Person("aki", 40);
-		Person p2 = new Person("cuni", 30);
-		Person p3 = new Person("ali", 20);
-		Person p4 = new Person("adian", 10);
+		Person p2 = new Person("cuni", 20);
+		Person p3 = new Person("ali", 30);
+		Person p4 = new Person("adian", 25);
 		
 		List<Person> persons = new ArrayList<>();
 		persons.add(p1);
@@ -31,6 +31,9 @@ public class ageComparatorListingPersons {
 		
 		System.out.println(persons.toString());
 		
+		Collections.sort(persons, new ReverseComparator<>(new AgeComparator()));
+		
+		System.out.println(persons.toString());
 		
 		for(Person p: persons)
 			System.out.println(p);
