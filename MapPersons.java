@@ -38,7 +38,7 @@ public class MapPersons {
 			System.out.println(p.getValue());
 		}
 		
-		Collections.sort(persons, new AgeComparator());
+		//Collections.sort(persons, new AgeComparator());
 	}
 
 	private static Person[] addNew(Person[] list, final Person p5) {
