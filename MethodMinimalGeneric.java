@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class MethodMinimalListingPersons {
+public class MethodMinimalGeneric {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -39,20 +39,28 @@ public class MethodMinimalListingPersons {
 		for(Person p: persons)
 			System.out.println(p);
 		
-		final Person youngestPerson = (Person) min(persons, new AgeComparator());
+		final Person youngestPerson = min(persons, new AgeComparator());
 		System.out.println("Youngest person is: " + youngestPerson.toString());
+		
+		List<Integer> nums = new ArrayList<>();
+		nums.add(1);
+		nums.add(2);
+		nums.add(3);
+		
+		System.out.println(min(nums, Integer::compare));
+		
 	}
 
-	private static Object min(List values, Comparator comparator) {
+	private static <T> T min(List <T> values, Comparator<T> comparator) {
 		
 		if(values.isEmpty()){
 			throw new IllegalArgumentException("There is no data in the list");
 		}
 		
-		Object lowestElement = values.get(0);
+		T lowestElement = values.get(0);
 		
 		for(int i = 1; i < values.size(); i++){
-			Object element = values.get(i);
+			T element = values.get(i);
 			if(comparator.compare(element, lowestElement) < 0){
 				lowestElement = element;
 			}
