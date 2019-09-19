@@ -16,10 +16,11 @@ public class PersonStorageTest {
 	private PersonLoader loader;
 	private PersonSaver saver;
 	
-	
-	
 	@Test
 	public void savesAndLoadsPerson() throws Exception {
+		file = new File("person.txt");
+		loader = new PersonLoader(file);
+		saver = new PersonSaver(file);
 		
 		Person person = new Person("mike mici", 22);
 		saver.save(person);
